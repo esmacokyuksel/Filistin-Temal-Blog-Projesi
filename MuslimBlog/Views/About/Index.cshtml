@@ -1,0 +1,66 @@
+﻿@model IEnumerable<EntityLayer.Concrete.About>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url('/miniblog/images/66.jpg');">
+    <div class="container">
+        <div class="row same-height justify-content-center">
+            <div class="col-md-12 col-lg-10">
+                <div class="post-entry text-center">
+                    <h1 class="">Hakkımızda</h1>
+                    <p class="lead mb-4 text-white">Sizler için blog yazısı hazırlayan yazarlarımızı ve ekibimizi daha yakından tanımak ister misiniz?</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 order-md-2">
+                <img src="~/miniblog/images/e.jpg" alt="Image"  class="img-fluid">
+            </div>
+            <div class="col-md-5 mr-auto order-md-1">
+                <h2>Biz kimiz?</h2>
+                @foreach (var item in Model)
+                {
+                <p>@item.AboutContent1</p>
+                }
+            <ul class="ul-check list-unstyled success">
+
+                <li>Tarih ile ilgili incelemeler yapan </li>
+                <li>Sorgulayan ve araştıran </li>
+                <li>İslam için yaşayan birkaç genç</li>
+            </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@Html.Action("MeetTheTeam", "About")
+<div class="site-section bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/miniblog/images/m.png" alt="Image" style="height:350px; width:400px;" class="img-fluid">
+            </div>
+            <div class="col-md-5 ml-auto">
+                <h2>Neler yapıyoruz?</h2>
+                @foreach (var item in Model)
+                {
+                <p class="mb-4">@item.AboutContent2</p>
+                }
+                <ul class="ul-check list-unstyled success">
+                    <li>Boykot ürünleriile alakalı içerikler</li>
+                    <li>Alınması şüpheli olan ürünlerle alakalı içerikler</li>
+                    <li>Batı haberlerinin yön vermediği islam dünyası ile alakalı  blog yazıları</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+@*@Html.Action("MailSubscribe", "Blog")*@
+@Html.Action("Footer", "About")
+
+
